@@ -1,0 +1,43 @@
+{
+  "name": "author",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "trivia": {
+      "type": "string",
+      "index": false
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": false
+    },
+    "image": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "books": {
+      "type": "referencesMany",
+      "model": "book",
+      "foreignKey": "bookId",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+     ],
+  "methods": {}
+}

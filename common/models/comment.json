@@ -1,0 +1,42 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": true
+  },
+  "properties": {
+    "rating": {
+      "type": "number",
+      "required": true
+    },
+    "comment": {
+      "type": "string",
+      "required": true
+    },
+    "postedBy": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "book": {
+      "type": "belongsTo",
+      "model": "book",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+  {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

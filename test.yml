@@ -1,0 +1,2802 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: freebooks
+basePath: /api
+paths:
+  '/Users/{id}/accessTokens/{fk}':
+    get:
+      tags:
+        - User
+      summary: Find a related item by id for accessTokens.
+      operationId: User.prototype.__findById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Delete a related item by id for accessTokens.
+      operationId: User.prototype.__destroyById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: Update a related item by id for accessTokens.
+      operationId: User.prototype.__updateById__accessTokens
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for accessTokens
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+  '/Users/{id}/accessTokens':
+    get:
+      tags:
+        - User
+      summary: Queries accessTokens of User.
+      operationId: User.prototype.__get__accessTokens
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AccessToken'
+      deprecated: false
+    post:
+      tags:
+        - User
+      summary: Creates a new instance in accessTokens of this model.
+      operationId: User.prototype.__create__accessTokens
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/AccessToken'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/AccessToken'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: Deletes all accessTokens of this model.
+      operationId: User.prototype.__delete__accessTokens
+      parameters:
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Users/{id}/accessTokens/count':
+    get:
+      tags:
+        - User
+      summary: Counts accessTokens of User.
+      operationId: User.prototype.__count__accessTokens
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Users:
+    post:
+      tags:
+        - User
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: User.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: User.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__put_Users
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: User.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+      deprecated: false
+  /Users/replaceOrCreate:
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: User.replaceOrCreate__post_Users_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/upsertWithWhere:
+    post:
+      tags:
+        - User
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: User.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  '/Users/{id}/exists':
+    get:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__get_Users_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/Users/{id}':
+    head:
+      tags:
+        - User
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'User.exists__head_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: User.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    put:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__put_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+    delete:
+      tags:
+        - User
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: User.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - User
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: User.prototype.patchAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+        - name: id
+          in: path
+          description: User id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  '/Users/{id}/replace':
+    post:
+      tags:
+        - User
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'User.replaceById__post_Users_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/findOne:
+    get:
+      tags:
+        - User
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: User.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/User'
+      deprecated: false
+  /Users/update:
+    post:
+      tags:
+        - User
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: User.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /Users/count:
+    get:
+      tags:
+        - User
+      summary: Count instances of the model matched by where from the data source.
+      operationId: User.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Users/change-stream:
+    post:
+      tags:
+        - User
+      summary: Create a change stream.
+      operationId: User.createChangeStream__post_Users_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - User
+      summary: Create a change stream.
+      operationId: User.createChangeStream__get_Users_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /Users/login:
+    post:
+      tags:
+        - User
+      summary: Login a user with username/email and password.
+      operationId: User.login
+      parameters:
+        - name: credentials
+          in: body
+          required: true
+          schema:
+            type: object
+        - name: include
+          in: query
+          description: >-
+            Related objects to include in the response. See the description of
+            return value for more details.
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: >+
+              The response body contains properties of the AccessToken created
+              on login.
+
+              Depending on the value of `include` parameter, the body may
+              contain additional properties:
+
+                - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
+
+            type: object
+      deprecated: false
+  /Users/logout:
+    post:
+      tags:
+        - User
+      summary: Logout a user with access token.
+      operationId: User.logout
+      parameters: []
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/confirm:
+    get:
+      tags:
+        - User
+      summary: Confirm a user registration with email verification token.
+      operationId: User.confirm
+      parameters:
+        - name: uid
+          in: query
+          required: true
+          type: string
+        - name: token
+          in: query
+          required: true
+          type: string
+        - name: redirect
+          in: query
+          required: false
+          type: string
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /Users/reset:
+    post:
+      tags:
+        - User
+      summary: Reset password for a user with email.
+      operationId: User.resetPassword
+      parameters:
+        - name: options
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/categories/{id}/books/{fk}':
+    get:
+      tags:
+        - category
+      summary: Find a related item by id for books.
+      operationId: category.prototype.__findById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: Delete a related item by id for books.
+      operationId: category.prototype.__destroyById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: Update a related item by id for books.
+      operationId: category.prototype.__updateById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/book'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  '/categories/{id}/books':
+    get:
+      tags:
+        - category
+      summary: Queries books of category.
+      operationId: category.prototype.__get__books
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/book'
+      deprecated: false
+    post:
+      tags:
+        - category
+      summary: Creates a new instance in books of this model.
+      operationId: category.prototype.__create__books
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/book'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: Deletes all books of this model.
+      operationId: category.prototype.__delete__books
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/categories/{id}/books/count':
+    get:
+      tags:
+        - category
+      summary: Counts books of category.
+      operationId: category.prototype.__count__books
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /categories:
+    post:
+      tags:
+        - category
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: category.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    patch:
+      tags:
+        - category
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: category.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: category.replaceOrCreate__put_categories
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: category.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/category'
+      deprecated: false
+  /categories/replaceOrCreate:
+    post:
+      tags:
+        - category
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: category.replaceOrCreate__post_categories_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/upsertWithWhere:
+    post:
+      tags:
+        - category
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: category.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  '/categories/{id}/exists':
+    get:
+      tags:
+        - category
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'category.exists__get_categories_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/categories/{id}':
+    head:
+      tags:
+        - category
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'category.exists__head_categories_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: category.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    put:
+      tags:
+        - category
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'category.replaceById__put_categories_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+    delete:
+      tags:
+        - category
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: category.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - category
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: category.prototype.patchAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  '/categories/{id}/replace':
+    post:
+      tags:
+        - category
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'category.replaceById__post_categories_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/findOne:
+    get:
+      tags:
+        - category
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: category.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/category'
+      deprecated: false
+  /categories/update:
+    post:
+      tags:
+        - category
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: category.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/category'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /categories/count:
+    get:
+      tags:
+        - category
+      summary: Count instances of the model matched by where from the data source.
+      operationId: category.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /categories/change-stream:
+    post:
+      tags:
+        - category
+      summary: Create a change stream.
+      operationId: category.createChangeStream__post_categories_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - category
+      summary: Create a change stream.
+      operationId: category.createChangeStream__get_categories_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /books:
+    post:
+      tags:
+        - book
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: book.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    patch:
+      tags:
+        - book
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: book.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    put:
+      tags:
+        - book
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: book.replaceOrCreate__put_books
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    get:
+      tags:
+        - book
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: book.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/book'
+      deprecated: false
+  /books/replaceOrCreate:
+    post:
+      tags:
+        - book
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: book.replaceOrCreate__post_books_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  /books/upsertWithWhere:
+    post:
+      tags:
+        - book
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: book.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  '/books/{id}/exists':
+    get:
+      tags:
+        - book
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'book.exists__get_books_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/books/{id}':
+    head:
+      tags:
+        - book
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'book.exists__head_books_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - book
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: book.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    put:
+      tags:
+        - book
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'book.replaceById__put_books_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    delete:
+      tags:
+        - book
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: book.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - book
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: book.prototype.patchAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/book'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  '/books/{id}/replace':
+    post:
+      tags:
+        - book
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'book.replaceById__post_books_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  /books/findOne:
+    get:
+      tags:
+        - book
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: book.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  /books/update:
+    post:
+      tags:
+        - book
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: book.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/book'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /books/count:
+    get:
+      tags:
+        - book
+      summary: Count instances of the model matched by where from the data source.
+      operationId: book.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /books/change-stream:
+    post:
+      tags:
+        - book
+      summary: Create a change stream.
+      operationId: book.createChangeStream__post_books_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - book
+      summary: Create a change stream.
+      operationId: book.createChangeStream__get_books_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/authors/{id}/books/{fk}':
+    get:
+      tags:
+        - author
+      summary: Find a related item by id for books.
+      operationId: author.prototype.__findById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    delete:
+      tags:
+        - author
+      summary: Delete a related item by id for books.
+      operationId: author.prototype.__destroyById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - author
+      summary: Update a related item by id for books.
+      operationId: author.prototype.__updateById__books
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for books
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/book'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  '/authors/{id}/books':
+    get:
+      tags:
+        - author
+      summary: Queries books of author.
+      operationId: author.prototype.__get__books
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/book'
+      deprecated: false
+    post:
+      tags:
+        - author
+      summary: Creates a new instance in books of this model.
+      operationId: author.prototype.__create__books
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/book'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+    delete:
+      tags:
+        - author
+      summary: Deletes all books of this model.
+      operationId: author.prototype.__delete__books
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/authors/{id}/books/count':
+    get:
+      tags:
+        - author
+      summary: Counts books of author.
+      operationId: author.prototype.__count__books
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /authors:
+    post:
+      tags:
+        - author
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: author.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+    patch:
+      tags:
+        - author
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: author.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+    put:
+      tags:
+        - author
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: author.replaceOrCreate__put_authors
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+    get:
+      tags:
+        - author
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: author.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/author'
+      deprecated: false
+  /authors/replaceOrCreate:
+    post:
+      tags:
+        - author
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: author.replaceOrCreate__post_authors_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+  /authors/upsertWithWhere:
+    post:
+      tags:
+        - author
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: author.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+  '/authors/{id}/exists':
+    get:
+      tags:
+        - author
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'author.exists__get_authors_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/authors/{id}':
+    head:
+      tags:
+        - author
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'author.exists__head_authors_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - author
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: author.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+    put:
+      tags:
+        - author
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'author.replaceById__put_authors_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+    delete:
+      tags:
+        - author
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: author.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - author
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: author.prototype.patchAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/author'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+  '/authors/{id}/replace':
+    post:
+      tags:
+        - author
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'author.replaceById__post_authors_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+  /authors/findOne:
+    get:
+      tags:
+        - author
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: author.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/author'
+      deprecated: false
+  /authors/update:
+    post:
+      tags:
+        - author
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: author.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/author'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /authors/count:
+    get:
+      tags:
+        - author
+      summary: Count instances of the model matched by where from the data source.
+      operationId: author.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /authors/change-stream:
+    post:
+      tags:
+        - author
+      summary: Create a change stream.
+      operationId: author.createChangeStream__post_authors_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - author
+      summary: Create a change stream.
+      operationId: author.createChangeStream__get_authors_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  '/comments/{id}/book':
+    get:
+      tags:
+        - comment
+      summary: Fetches belongsTo relation book.
+      operationId: comment.prototype.__get__book
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/book'
+      deprecated: false
+  /comments:
+    post:
+      tags:
+        - comment
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: comment.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+    patch:
+      tags:
+        - comment
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: comment.patchOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+    put:
+      tags:
+        - comment
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: comment.replaceOrCreate__put_comments
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+    get:
+      tags:
+        - comment
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: comment.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/comment'
+      deprecated: false
+  /comments/replaceOrCreate:
+    post:
+      tags:
+        - comment
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: comment.replaceOrCreate__post_comments_replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+  /comments/upsertWithWhere:
+    post:
+      tags:
+        - comment
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: comment.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+  '/comments/{id}/exists':
+    get:
+      tags:
+        - comment
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'comment.exists__get_comments_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/comments/{id}':
+    head:
+      tags:
+        - comment
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'comment.exists__head_comments_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - comment
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: comment.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+    put:
+      tags:
+        - comment
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'comment.replaceById__put_comments_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+    delete:
+      tags:
+        - comment
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: comment.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    patch:
+      tags:
+        - comment
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: comment.prototype.patchAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/comment'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+  '/comments/{id}/replace':
+    post:
+      tags:
+        - comment
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: 'comment.replaceById__post_comments_{id}_replace'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+  /comments/findOne:
+    get:
+      tags:
+        - comment
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: comment.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/comment'
+      deprecated: false
+  /comments/update:
+    post:
+      tags:
+        - comment
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: comment.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/comment'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: Information related to the outcome of the operation
+            type: object
+            properties:
+              count:
+                description: The number of instances updated
+                type: number
+                format: double
+      deprecated: false
+  /comments/count:
+    get:
+      tags:
+        - comment
+      summary: Count instances of the model matched by where from the data source.
+      operationId: comment.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /comments/change-stream:
+    post:
+      tags:
+        - comment
+      summary: Create a change stream.
+      operationId: comment.createChangeStream__post_comments_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - comment
+      summary: Create a change stream.
+      operationId: comment.createChangeStream__get_comments_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+tags:
+  - name: User
+  - name: category
+  - name: book
+  - name: author
+  - name: comment
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+  - application/xml
+  - text/xml
+produces:
+  - application/json
+  - application/xml
+  - text/xml
+  - application/javascript
+  - text/javascript
+definitions:
+  x-any:
+    properties: {}
+  AccessToken:
+    properties:
+      id:
+        type: string
+      ttl:
+        default: 1209600
+        description: time to live in seconds (2 weeks by default)
+        type: number
+        format: double
+      created:
+        type: string
+        format: date
+      userId:
+        type: number
+        format: double
+    required:
+      - id
+    additionalProperties: false
+  User:
+    properties:
+      realm:
+        type: string
+      username:
+        type: string
+      email:
+        type: string
+      emailVerified:
+        type: boolean
+      id:
+        type: number
+        format: double
+    required:
+      - email
+    additionalProperties: false
+  book:
+    properties:
+      name:
+        type: string
+      author:
+        type: string
+      description:
+        type: string
+      rating:
+        type: number
+        format: double
+      url:
+        type: string
+      price:
+        default: 0
+        type: number
+        format: double
+      category:
+        type: string
+      id:
+        type: number
+        format: double
+      categoryId:
+        type: number
+        format: double
+      authorId:
+        type: number
+        format: double
+    required:
+      - name
+      - author
+      - description
+      - rating
+      - url
+      - price
+      - category
+    additionalProperties: false
+  category:
+    properties:
+      name:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - name
+    additionalProperties: false
+  author:
+    properties:
+      name:
+        type: string
+      trivia:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - name
+    additionalProperties: false
+  comment:
+    properties:
+      rating:
+        type: number
+        format: double
+      comment:
+        type: string
+      postedBy:
+        type: object
+      id:
+        type: number
+        format: double
+      bookId:
+        type: number
+        format: double
+    required:
+      - rating
+      - comment
+      - postedBy
+    additionalProperties: false
