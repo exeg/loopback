@@ -3,8 +3,8 @@ applications:
   memory: 1024M
   instances: 1
   domain: mybluemix.net
-  name: lastchance2
-  host: lastchance2
+  name: freebooks
+  host: freebooks
   disk_quota: 1024M
   services:
-  - secondhot-cloudantNoSQLDB
+  - Cloudant NoSQL DB-xe

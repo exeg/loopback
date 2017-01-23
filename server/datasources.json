@@ -4,10 +4,10 @@
     "connector": "memory"
   },
     "cloudant": {
-    "url": "https://b212010e-8786-4941-b14c-258391e43b32-bluemix:cd83863ee053ec0a3213c85b1e2c917f683bb9b314bca178621cf58b5e7307c4@b212010e-8786-4941-b14c-258391e43b32-bluemix.cloudant.com",
+    "url": "https://f962e0cc-ec38-4c9a-b2a9-bb702dfe4c41-bluemix:00a5773bb0a821271e8222826581fd7236c350edf35d7843570fd7244896804e@f962e0cc-ec38-4c9a-b2a9-bb702dfe4c41-bluemix.cloudant.com",
     "database": "hotbooks",
-    "username": "b212010e-8786-4941-b14c-258391e43b32-bluemix",
-    "password": "cd83863ee053ec0a3213c85b1e2c917f683bb9b314bca178621cf58b5e7307c4",
+    "username": "f962e0cc-ec38-4c9a-b2a9-bb702dfe4c41-bluemix",
+    "password": "00a5773bb0a821271e8222826581fd7236c350edf35d7843570fd7244896804e",
     "name": "cloudant",
     "modelIndex": "",
     "connector": "cloudant"
