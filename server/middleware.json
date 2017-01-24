@@ -8,6 +8,7 @@
       "params": {
         "origin": true,
         "credentials": true,
+        "origin": "https://exeg.github.io",
         "maxAge": 86400
       }
     },
